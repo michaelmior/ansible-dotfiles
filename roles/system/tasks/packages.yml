@@ -1,0 +1,128 @@
+---
+- name: Add repositories
+  apt_repository: repo='{{ item }}' update_cache=yes state=present
+  with_items:
+    - ppa:boost-latest/ppa
+    - ppa:hvr/ghc
+    - ppa:ccope/tmux
+    - ppa:chris-lea/redis-server
+    - ppa:chris-lea/zeromq
+    - ppa:cwchien/gradle
+    - ppa:gekkio/ag
+    - ppa:git-core/ppa
+    - ppa:nviennot/tmate
+    - ppa:plt/racket
+    - ppa:texlive-backports/ppa
+    - ppa:ubuntu-wine/ppa
+    - ppa:webupd8team/java
+    - ppa:xorg-edgers/ppa
+    - deb http://cran.r-project.org/bin/linux/ubuntu precise/
+    - deb http://desktop-download.mendeley.com/download/apt stable main
+    - deb http://dl.google.com/linux/chrome/deb/ stable main
+    - deb http://dl.hhvm.com/ubuntu precise main
+    - deb http://download.opensuse.org/repositories/home:/tpokorra:/mono/xUbuntu_12.04/ /
+    - deb http://get.docker.io/ubuntu docker main
+    - deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu precise main
+    - deb http://llvm.org/apt/precise/ llvm-toolchain-precise main
+    - deb-src http://llvm.org/apt/precise/ llvm-toolchain-precise main
+    - deb http://packages.erlang-solutions.com/debian precise contrib
+    - deb http://archive.canonical.com/ubuntu precise partner
+    - deb http://repo.percona.com/apt precise main
+    - deb-src http://repo.percona.com/apt precise main
+    - deb [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
+    - deb-src [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
+    - deb http://toolbelt.heroku.com/ubuntu ./
+    - deb [arch=amd64] http://ubuntu.hyperdex.org precise main
+
+- name: Install packages
+  apt: package={{ item }} state=present
+  with_items:
+    - acroread
+    - ant
+    - asymptote
+    - autoconf
+    - bison
+    - build-essential
+    - cabal-install
+    - calibre
+    - chromium-browser
+    - clojure
+    - cmake
+    - curl
+    - cvs
+    - dia
+    - docker
+    - doxygen
+    - dropbox
+    - exuberant-ctags
+    - firefox
+    - flashplugin-installer
+    - flex
+    - ghc
+    - gimp
+    - git
+    - gnuplot
+    - gradle
+    - groovy
+    - gtk-redshift
+    - hhvm
+    - latexdiff
+    - latex-mk
+    - libnotify-bin
+    - links2
+    - llvm
+    - lyx
+    - maven
+    - mendeleydesktop
+    - mono-runtime
+    - mysql-common
+    - mysql-workbench-community
+    - ncdu
+    - nmap
+    - ocaml
+    - opam
+    - paprefs
+    - pavucontrol
+    - pdfgrep
+    - pdfshuffler
+    - p7zip
+    - php5-cli
+    - php5-dev
+    - php5-gd
+    - php5-json
+    - php5-mysql
+    - php5-readline
+    - php5-xdebug
+    - postgresql-client
+    - pv
+    - r-base
+    - racket
+    - redis-tools
+    - reptyr
+    - rpm2cpio
+    - scala
+    - scons
+    - silversearcher-ag
+    - sloccount
+    - steam-launcher
+    - strace
+    - subversion
+    - teamviewer
+    - texlive-full
+    - tidy
+    - tmate
+    - ttf-mscorefonts-installer
+    - tmux
+    - unar
+    - unrar
+    - unzip
+    - valgrind
+    - vagrant
+    - vim-nox
+    - vlc
+    - wine
+    - winefish
+    - wireshark
+    - wget
+    - xclip
+    - zsh
